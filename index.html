@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,73 @@
     <title>Document</title>
     <link rel="stylesheet" href="/styles/css/main.css">
 </head>
-<body>
-    <head><h1>Customizable online survey generator</h1></head>
+
+<body class="dark">
+
+    <head>
+        <h1>Customizable online survey generator</h1>
+    </head>
 
     <h3>Survey title</h3>
 
-    <script src="/scripts/main.js" ></script>
+    <fieldset>
+
+        <legend>Wich is the best fruit</legend>
+
+        <div>
+            <label for="cbox1" class="container">banana
+                <input type="checkbox" id="cbox1" value="banana">
+                <span class="checkmark"></span>
+            </label>
+
+            <label for="cbox2" class="container">apple
+                <input type="checkbox" id="cbox2" value="apple">
+                <span class="checkmark"></span>
+            </label>
+
+            <label for="cbox3" class="container">pear
+                <input type="checkbox" id="cbox3" value="pear">
+                <span class="checkmark"></span>    
+            </label>
+
+
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend>The potatoe is: </legend>
+
+        <div>
+            <div>
+                <input type="radio" id="radio1" value="misshapen">
+                <label for="cbox1">misshapen</label>
+            </div>
+
+            <div>
+                <input type="radio" id="radio2" value="tasty">
+                <label for="cbox2">tasty</label>
+            </div>
+
+            <div>
+                <input type="radio" id="radio3" value="fluorescent">
+                <label for="cbox3">fluorescent</label>
+            </div>
+
+
+        </fieldset>
+
+    </div>
+
+    <fieldset>
+
+        <label for="text">Introduce your text</label>
+
+        <input type="text" id="text" name="text" required>
+
+    </fieldset>
+    <!-- <script src="/scripts/main.js" ></script> -->
 </body>
+
 </html>

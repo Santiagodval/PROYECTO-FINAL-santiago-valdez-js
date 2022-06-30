@@ -1,7 +1,110 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Rubik+Moonrocks&display=swap");
+fieldset {
+  background-color: #DDE392;
+  display: grid;
+  padding: 1rem;
+  font-size: 24px;
+  margin: 0.5rem;
+}
+fieldset > div {
+  display: grid;
+}
+
+body.dark fieldset {
+  color: #b0e4e6;
+  background-color: #264027;
+}
+
+body.dark {
+  background-color: #3C5233;
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  transition: 1s;
+}
+
+.dark .checkmark {
+  background-color: #6F732F;
+  border: solid 1px #b0e4e6;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: rgb(219, 150, 150);
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #b0e4e6;
+  border: solid 3px #6F732F;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #6F732F;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
 * {
   padding: 0;
   margin: 0;
+}
+
+body {
+  font-family: "Montserrat";
+}
+
+h3 {
+  font-size: 28px;
 }
 
 h1 {
