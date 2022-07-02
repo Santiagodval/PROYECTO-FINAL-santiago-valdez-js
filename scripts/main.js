@@ -36,7 +36,6 @@ while(orderType !== 1 && orderType !== 2){
 let elementTitle = prompt("enter element title, cancel to stop")
 while(elementTitle !== null){
     let type = optionsTypes[parseInt(prompt("enter this survey type: \n 1-radio button \n 2-checkbox \n 3-textfield"))-1];
-
     let options = [];
     if(type != optionsTypes[2]){
         let option = "";
@@ -64,7 +63,9 @@ switch (orderType) {
         break;
 
     case 2:
-        elementList.sort((a , b) => optionsTypes.find(a[type]) - optionsTypes.find(b[type]))
+        console.log(elementList)
+        elementList.sort((a , b) => {
+            return optionsTypes.find(element => element === a) - optionsTypes.find(element => element === b)})
         break;
     default:
         break;
