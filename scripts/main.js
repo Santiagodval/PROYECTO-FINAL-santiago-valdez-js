@@ -57,18 +57,20 @@ while(elementTitle !== null){
     elementTitle = prompt("enter element title, cancel to stop")
 }
 
-switch (orderType) {
-    case 1:
+// switch (orderType) {
+//     case 1:
         elementList.sort((a , b) => a.dificulty-b.dificulty);
-        break;
+//        break;
 
-    case 2:
-        console.log(elementList)
-        elementList.sort((a , b) => {
-            return optionsTypes.find(element => element === a) - optionsTypes.find(element => element === b)})
-        break;
-    default:
-        break;
-}
+//     case 2:
+//         console.log(elementList)
+//         elementList = elementList.sort((a , b) => {
+//             console.log(a)
+//             console.log(b)
+//             return optionsTypes.find(element => element === a.type) - optionsTypes.find(element => element === b.type)})
+//         break;
+//     default:
+//         break;
+// }
 
 console.log(elementList)
