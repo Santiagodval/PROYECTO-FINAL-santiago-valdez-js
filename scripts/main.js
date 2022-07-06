@@ -1,50 +1,66 @@
-let checkButton = document.getElementById("addCheckBox");
-let radioButton = document.getElementById("addRadioButton");
-let txtfldButton = document.getElementById("addTextfield");
-let addSubsection = document.getElementById("addSubsection");
-
 let section = {
-    title:"",
-    type:"",
+    title: "",
+    type: "",
     subsections: []
 }
 
-checkButton.addEventListener("click", addCheckBox);
-radioButton.addEventListener("click", addRadioButton);
-txtfldButton.addEventListener("click", addTextfield);
-addSubsection.addEventListener("click", addSubsectionToElement);
+document.getElementById("addCheckBox").addEventListener("click", addCheckBox);
+document.getElementById("addRadioButton").addEventListener("click", addRadioButton);
+document.getElementById("addTextfield").addEventListener("click", addTextfield);
+document.getElementById("addSubsection").addEventListener("click", addSubsectionToElement);
 
 
 //--------------
 
-function addCheckBox(){
+function addCheckBox() {
     console.log("addCheckBox");
     section.type = "checkbox";
-    section.title = document.getElementById("title").value;  
+    section.title = document.getElementById("title").value;
     addHTML();
 
-    section.subsections = [];
+    resetSection();
 }
 
-function addRadioButton(){
+function addRadioButton() {
     console.log("addRadioButton");
+    section.type = "radio";
+    section.title = document.getElementById("title").value;
+    addHTML();
+
+    resetSection();
 }
 
-function addTextfield(){
+function addTextfield() {
     console.log("addTextfield");
+    section.type = "textfield";
+    section.title = document.getElementById("title").value;
+    addHTML();
+
+    resetSection();
 }
 
 //---------------
 
-function addSubsectionToElement(){
-    console.log(document.getElementById("subsectionText").value);
-    section.subsections.push("asdf");    
+function addSubsectionToElement() {
+        console.log(document.getElementById("subsectionText").value);
+        section.subsections.push(document.getElementById("subsectionText").value);
+    
 }
 
 //-------------
 
-function addHTML(){
-    if(section.type != ""){
-    console.log(section)
+function addHTML() {
+    if (section.type != "" && section.title != "" && section.subsections != []) {
+        console.log(section)
+    }else{
+        alert("complete the inputs")
+    }
+}
+
+function resetSection() {
+    section = {
+        title: "",
+        type: "",
+        subsections: []
     }
 }
