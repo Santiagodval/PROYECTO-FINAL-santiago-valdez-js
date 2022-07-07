@@ -42,9 +42,9 @@ function addTextfield() {
 //---------------
 
 function addSubsectionToElement() {
-        console.log(document.getElementById("subsectionText").value);
-        section.subsections.push(document.getElementById("subsectionText").value);
-    
+    console.log(document.getElementById("subsectionText").value);
+    section.subsections.push(document.getElementById("subsectionText").value);
+
 }
 
 //-------------
@@ -52,7 +52,16 @@ function addSubsectionToElement() {
 function addHTML() {
     if (section.type != "" && section.title != "" && section.subsections != []) {
         console.log(section)
-    }else{
+
+        let container = document.createElement("fieldset");
+
+        container.className = "container";
+        container.innerHTML = `<legend>${section.title}</legend> ${createHTML()}`;
+        
+        document.body.append(container);
+
+
+    } else {
         alert("complete the inputs")
     }
 }
@@ -63,4 +72,12 @@ function resetSection() {
         type: "",
         subsections: []
     }
+}
+
+function createHTML(){
+    let html ="";
+    array = section.subsections;
+    array.forEach((coso,index) => {html = html+(`<label for='cbox1' class='container'>${coso}<input type='${section.type}' id='cbox${index}' value='${coso}'><span class='checkmark'></span></label><br>`)});
+    console.log(html)
+    return html;
 }
