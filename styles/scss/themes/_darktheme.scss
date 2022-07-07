@@ -1,0 +1,5 @@
+@use "../utilities/variables" as *;
+
+body.dark{
+    background-color: map-get($dark-theme , "green2");
+}
