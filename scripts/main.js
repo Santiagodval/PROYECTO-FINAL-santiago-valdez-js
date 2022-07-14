@@ -1,10 +1,11 @@
-localStorage.getItem("sections") === null ? localStorage.setItem("sections",{}) : generateHTML()
 
 let section = {
     title: "",
     type: "",
     subsections: []
 }
+
+localStorage.getItem("sections") === null ? localStorage.setItem("sections",JSON.stringify({})) : generateHTML()
 
 document.getElementById("addCheckBox").addEventListener("click", addCheckBox);
 document.getElementById("addRadioButton").addEventListener("click", addRadioButton);
@@ -19,7 +20,10 @@ function addCheckBox() {
     section.type = "checkbox";
     section.title = document.getElementById("title").value;
     addHTML();
-    localStorage.getItem("sections")[JSON.parse(localStorage.getItem("sections")).length] = section; 
+    let newSection = JSON.parse(localStorage.getItem("sections"));
+    console.log(Object.keys(newSection).length)
+    newSection[Object.keys(newSection).length || 0] = section;
+    localStorage.setItem("sections", JSON.stringify(newSection))
 
     resetSection();
 }
@@ -29,7 +33,10 @@ function addRadioButton() {
     section.type = "radio";
     section.title = document.getElementById("title").value;
     addHTML();
-    localStorage.setItem("sections", JSON.parse(localStorage.getItem("sections"))[JSON.parse(localStorage.getItem("sections")).length] = section)
+    let newSection = JSON.parse(localStorage.getItem("sections"));
+    console.log(Object.keys(newSection).length)
+    newSection[Object.keys(newSection).length || 0] = section;
+    localStorage.setItem("sections", JSON.stringify(newSection))
 
     resetSection();
 }
@@ -39,7 +46,10 @@ function addTextfield() {
     section.type = "textfield";
     section.title = document.getElementById("title").value;
     addHTML();
-    localStorage.setItem("sections")[JSON.parse(localStorage.getItem("sections")).length] = section;
+    let newSection = JSON.parse(localStorage.getItem("sections"));
+    console.log(Object.keys(newSection).length)
+    newSection[Object.keys(newSection).length || 0] = section;
+    localStorage.setItem("sections", JSON.stringify(newSection))
 
     resetSection();
 }
@@ -92,8 +102,10 @@ function createHTML(){
 
 //creates and add the html to the dom from local storage
 function generateHTML(){
-    console.log(localStorage.getItem("sections"))
-    for(let i = 0;i<JSON.parse(localStorage.getItem("sections")).length;i++){
+    console.log(JSON.parse(localStorage.getItem("sections")));
+    console.log(Object.keys(JSON.parse(localStorage.getItem("sections"))).length);
+    for(let i = 0;i<Object.keys(JSON.parse(localStorage.getItem("sections"))).length;i++){
+        
         section.type = JSON.parse(localStorage.getItem("sections"))[i].type;
         section.title = JSON.parse(localStorage.getItem("sections"))[i].title;
         section.subsections = JSON.parse(localStorage.getItem("sections"))[i].subsections;
