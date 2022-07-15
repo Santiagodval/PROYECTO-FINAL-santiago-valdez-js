@@ -121,7 +121,7 @@ function generateHTML(){
 //delete sections
 
 function deleteAllSections(){
-    document.getElementById("body").innerHTML = ` <h1>Automatic survey generator</h1><button id="dark-mode">dark mode</button>
+    document.getElementById("body").innerHTML = ` <h1>Automatic survey generator</h1><button id="dark-mode"><i class="fa-solid fa-moon"></i></button>
 
     <fieldset class="main-fieldset" id="addSectionFieldset">
 
