@@ -1,4 +1,3 @@
-
 let section = {
     title: "",
     type: "",
@@ -12,7 +11,7 @@ document.getElementById("addCheckBox").addEventListener("click", addCheckBox);
 document.getElementById("addRadioButton").addEventListener("click", addRadioButton);
 document.getElementById("addTextfield").addEventListener("click", addTextfield);
 document.getElementById("addSubsection").addEventListener("click", addSubsectionToElement);
-
+document.getElementById("deleteAllSections").addEventListener("click", deleteAllSections);
 
 //--------------
 
@@ -116,4 +115,35 @@ function generateHTML(){
         section.i = JSON.parse(localStorage.getItem("sections"))[i].i;
     }
     
+}
+
+//delete sections
+
+function deleteAllSections(){
+    document.getElementById("body").innerHTML = ` <h1>Automatic survey generator</h1>
+
+    <fieldset class="main-fieldset" id="addSectionFieldset">
+
+        <legend>Add subsection</legend>
+
+        <label for="title">Title for the section: </label>
+        <input type="text" name="title" id="title"><br>
+        <br>
+        <label for="subsection">New subsection text:</label>
+        <input type="text" name="bubsectionText" id="subsectionText">
+        <button id="addSubsection">Add subsection</button>
+
+        <br><br>
+
+    <button id="addCheckBox">Add checkbox</button>
+    <button id="addRadioButton">Add radiobutton</button>
+    <button id="addTextfield">Add textfield</button>
+    <button id="deleteAllSections">Delete all sections</button>
+
+    </fieldset>
+
+
+    <script src="scripts/main.js"></script>`;
+
+    localStorage.setItem("sections", null);
 }
