@@ -163,7 +163,7 @@ document.getElementById("dark-mode").addEventListener("click", darkMode);
 function darkMode(){
 
     if(document.querySelector("body").className.includes("dark")){
-        document.querySelector("body").className = "";
+        document.querySelector("body").className = "light";
     }else{
         document.querySelector("body").className = "dark";
     }

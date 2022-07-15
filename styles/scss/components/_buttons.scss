@@ -12,5 +12,13 @@ button{
 
     &#dark-mode{
         color: map-get($map: $light-theme, $key: "green1");
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        border-radius: 50%;
+        background-color: map-get($map: $light-theme, $key: "yellow");
+    }
+
+    .light>&#dark-mode{
+        color: map-get($map: $dark-theme, $key: "green1");
+        background-color: map-get($map: $dark-theme, $key: "darkgreen");
     }
 }

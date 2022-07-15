@@ -100,6 +100,13 @@ button:hover {
 }
 button#dark-mode {
   color: #646F58;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 50%;
+  background-color: #DDE392;
+}
+.light > button#dark-mode {
+  color: #6F732F;
+  background-color: #0D1F22;
 }
 
 .main-fieldset {
