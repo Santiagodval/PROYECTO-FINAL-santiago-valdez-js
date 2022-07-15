@@ -146,5 +146,12 @@ function deleteAllSections(){
     <script src="scripts/main.js"></script>`;
 
     localStorage.removeItem("sections");
-    localStorage.setItem("sections",JSON.stringify({}))
+    localStorage.getItem("sections") === null ? localStorage.setItem("sections",JSON.stringify({})) : generateHTML();
+
+document.getElementById("addCheckBox").addEventListener("click", addCheckBox);
+document.getElementById("addRadioButton").addEventListener("click", addRadioButton);
+document.getElementById("addTextfield").addEventListener("click", addTextfield);
+document.getElementById("addSubsection").addEventListener("click", addSubsectionToElement);
+document.getElementById("deleteAllSections").addEventListener("click", deleteAllSections);
+
 }

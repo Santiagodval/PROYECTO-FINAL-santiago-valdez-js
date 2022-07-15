@@ -13,7 +13,7 @@
     user-select: none;
 }
 
-.container input {
+.container input[type=checkbox] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -21,7 +21,7 @@
     width: 0;
 }
 
-.checkmark {
+.checkmark[type=checkbox] {
     position: absolute;
     top: 0;
     left: 0;
@@ -32,17 +32,17 @@
 }
 
 .dark{
-    .checkmark{
+    .checkmark[type=checkbox]{
         background-color: map-get($dark-theme, "green1");
         border: solid 1px  map-get($dark-theme, "fontcolor");
     }
 }
 
-.container:hover input~.checkmark {
+.container:hover input~.checkmark[type=checkbox] {
     background-color: rgb(219, 150, 150);
 }
 
-.container input:checked~.checkmark {
+.container input:checked~.checkmark[type=checkbox] {
     background-color: map-get($dark-theme, "fontcolor");
     box-shadow: 0px 3px 2px 3px  map-get($dark-theme, "darkgreen");
 }
@@ -53,11 +53,11 @@
     display: none;
 }
 
-.container input:checked~.checkmark:after {
-    display: block;<
+.container input:checked~.checkmark:after[type=checkbox] {
+    display: block;
 }
 
-.container .checkmark:after {
+.container .checkmark:after[type=checkbox] {
     left: 8px;
     top: 4px;
     width: 5px;
