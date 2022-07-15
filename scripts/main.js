@@ -12,6 +12,7 @@ document.getElementById("addRadioButton").addEventListener("click", addRadioButt
 document.getElementById("addTextfield").addEventListener("click", addTextfield);
 document.getElementById("addSubsection").addEventListener("click", addSubsectionToElement);
 document.getElementById("deleteAllSections").addEventListener("click", deleteAllSections);
+document.getElementById("dark-mode").addEventListener("click", darkMode);
 
 //--------------
 
@@ -120,7 +121,7 @@ function generateHTML(){
 //delete sections
 
 function deleteAllSections(){
-    document.getElementById("body").innerHTML = ` <h1>Automatic survey generator</h1>
+    document.getElementById("body").innerHTML = ` <h1>Automatic survey generator</h1><button id="dark-mode">dark mode</button>
 
     <fieldset class="main-fieldset" id="addSectionFieldset">
 
@@ -153,5 +154,18 @@ document.getElementById("addRadioButton").addEventListener("click", addRadioButt
 document.getElementById("addTextfield").addEventListener("click", addTextfield);
 document.getElementById("addSubsection").addEventListener("click", addSubsectionToElement);
 document.getElementById("deleteAllSections").addEventListener("click", deleteAllSections);
+document.getElementById("dark-mode").addEventListener("click", darkMode);
 
+}
+
+//dark mode
+
+function darkMode(){
+
+    if(document.querySelector("body").className === "dark"){
+        document.querySelector("body").className = "";
+    }else{
+        document.querySelector("body").className = "dark";
+
+    }
 }

@@ -12,29 +12,29 @@
     -ms-user-select: none;
     user-select: none;
 }
+input[type=checkbox]{
 
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
+    &~.checkmark {
     position: absolute;
     top: 0;
     left: 0;
+    border: 1px solid black;
+
+
     height: 25px;
     width: 25px;
     border-radius: 5px;
     transition: 1s;
 }
+}
+
 
 .dark{
+    input[type=checkbox]{
     .checkmark{
         background-color: map-get($dark-theme, "green1");
         border: solid 1px  map-get($dark-theme, "fontcolor");
+    }
     }
 }
 
@@ -42,7 +42,7 @@
     background-color: rgb(219, 150, 150);
 }
 
-.container input:checked~.checkmark {
+.container input[type=checkbox]:checked~.checkmark {
     background-color: map-get($dark-theme, "fontcolor");
     box-shadow: 0px 3px 2px 3px  map-get($dark-theme, "darkgreen");
 }
@@ -53,7 +53,7 @@
     display: none;
 }
 
-.container input:checked~.checkmark:after {
+.container input[type=checkbox]:checked~.checkmark:after {
     display: block;
 }
 
