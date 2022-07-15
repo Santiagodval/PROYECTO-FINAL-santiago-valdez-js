@@ -5,7 +5,7 @@ let section = {
     i: 0
 }
 
-localStorage.getItem("sections") === null ? localStorage.setItem("sections",JSON.stringify({})) : generateHTML()
+localStorage.getItem("sections") === null ? localStorage.setItem("sections",JSON.stringify({})) : generateHTML();
 
 document.getElementById("addCheckBox").addEventListener("click", addCheckBox);
 document.getElementById("addRadioButton").addEventListener("click", addRadioButton);
@@ -145,5 +145,6 @@ function deleteAllSections(){
 
     <script src="scripts/main.js"></script>`;
 
-    localStorage.setItem("sections", null);
+    localStorage.removeItem("sections");
+    localStorage.setItem("sections",JSON.stringify({}))
 }
