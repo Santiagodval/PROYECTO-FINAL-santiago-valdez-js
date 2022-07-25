@@ -80,7 +80,7 @@ function addHTML() {
 
 
     } else {
-        alert("complete the inputs")
+        swal("Complete the inputs!");
     }
 }
 
