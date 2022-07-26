@@ -109,6 +109,25 @@ button#dark-mode {
   background-color: #0D1F22;
 }
 
+.dark .swal-modal {
+  background-color: #6F732F;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+.dark .swal-modal .swal-button {
+  background-color: #264027;
+}
+
+.swal-modal {
+  background-color: #7D8570;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+.swal-modal .swal-button {
+  background-color: #DDE392;
+  color: black;
+}
+
 .main-fieldset {
   display: block;
 }

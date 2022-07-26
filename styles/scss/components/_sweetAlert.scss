@@ -1,0 +1,25 @@
+@use "../utilities/variables" as *;
+
+.dark .swal-modal{
+    background-color: map-get($map: $dark-theme, $key: "green1");
+    border: 3px solid white;
+
+    border-radius: 10px;
+
+    .swal-button{
+        background-color: map-get($map: $dark-theme, $key: "green3");
+    }
+}
+
+.swal-modal{
+    background-color: map-get($map: $light-theme, $key: "green2");
+    border: 3px solid white;
+
+    border-radius: 10px;
+
+    .swal-button{
+        background-color: map-get($map: $light-theme, $key: "yellow");
+        color: black;
+    }
+}
+
