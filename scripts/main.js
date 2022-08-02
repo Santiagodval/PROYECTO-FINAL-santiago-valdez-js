@@ -5,7 +5,7 @@ let section = {
     i: 0
 }
 
-localStorage.getItem("sections") === null ? localStorage.setItem("sections",JSON.stringify({})) : generateHTML();
+localStorage.getItem("sections") === null ? starter() : generateHTML();
 
 document.getElementById("addCheckBox").addEventListener("click", addCheckBox);
 document.getElementById("addRadioButton").addEventListener("click", addRadioButton);
@@ -13,6 +13,15 @@ document.getElementById("addTextfield").addEventListener("click", addTextfield);
 document.getElementById("addSubsection").addEventListener("click", addSubsectionToElement);
 document.getElementById("deleteAllSections").addEventListener("click", deleteAllSections);
 document.getElementById("dark-mode").addEventListener("click", darkMode);
+
+function starter(){
+    localStorage.setItem("sections",JSON.stringify({}));
+    fetch("./instrucciones.json").then(respuesta => respuesta.json()).then(data => {
+        section = data[0];
+        console.log(data)
+        addHTML();
+    })
+}
 
 //--------------
 
