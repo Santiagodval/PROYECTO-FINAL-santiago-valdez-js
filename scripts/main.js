@@ -15,12 +15,19 @@ document.getElementById("deleteAllSections").addEventListener("click", deleteAll
 document.getElementById("dark-mode").addEventListener("click", darkMode);
 
 function starter(){
-    localStorage.setItem("sections",JSON.stringify({}));
+   localStorage.setItem("sections",JSON.stringify({}));
     fetch("./instrucciones.json").then(respuesta => respuesta.json()).then(data => {
         section = data[0];
-        console.log(data);
+        console.log(section);
         addHTML();
+        let newSection = JSON.parse(localStorage.getItem("sections"));
+        console.log(Object.keys(newSection).length)
+        newSection[Object.keys(newSection).length || 0] = section;
+        localStorage.setItem("sections", JSON.stringify(newSection))
+
+        resetSection();
     })
+    
 }
 
 //--------------
