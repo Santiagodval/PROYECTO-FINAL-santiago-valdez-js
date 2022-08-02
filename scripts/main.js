@@ -18,7 +18,7 @@ function starter(){
     localStorage.setItem("sections",JSON.stringify({}));
     fetch("./instrucciones.json").then(respuesta => respuesta.json()).then(data => {
         section = data[0];
-        console.log(data)
+        console.log(data);
         addHTML();
     })
 }
