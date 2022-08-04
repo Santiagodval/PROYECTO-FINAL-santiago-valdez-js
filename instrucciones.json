@@ -1,3 +1,6 @@
 [{
-    "title":"instrucciones","type":"checkbox","subsections":["put title","add subsections", "you wont directly see them but they are being added","use the button respective to the type of survey"], "i":666666666666
+    "title":"instrucciones","type":"checkbox","subsections":[{"value":"put title","number":-1}
+    ,{"value":"add subsections","number":-1},
+    {"value":"you wont directly see them but they are being added","number":-1} ,
+    {"value":"use the button respective to the type of survey","number":-1}], "i":-1
 }]
