@@ -15,6 +15,10 @@ input[type=radio]{
     border-radius: 50%;
     transition: 1s;
 }
+
+.checkmark.radio:after{
+    display: none;
+}
 }
 
 
@@ -27,8 +31,9 @@ input[type=radio]{
     }
 }
 
-.container:hover input~.checkmark {
+.container:hover input[type=radio]~.checkmark {
     background-color: map-get($map: $light-theme, $key: "green1");
+    
 }
 
 .container input[type=radio]:checked~.checkmark {
@@ -49,5 +54,4 @@ input[type=radio]{
     height: 8px;
     border: solid map-get($dark-theme, "green1");
     border-radius: 50%;
-    
 }

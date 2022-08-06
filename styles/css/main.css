@@ -35,7 +35,7 @@ input[type=checkbox] ~ .checkmark {
   border: solid 1px #b0e4e6;
 }
 
-.container:hover input ~ .checkmark {
+.container:hover input[type=checkbox] ~ .checkmark {
   background-color: #646F58;
 }
 
@@ -79,13 +79,16 @@ input[type=radio] ~ .checkmark {
   border-radius: 50%;
   transition: 1s;
 }
+input[type=radio] .checkmark.radio:after {
+  display: none;
+}
 
 .dark input[type=radio] .checkmark {
   background-color: #6F732F;
   border: solid 1px #b0e4e6;
 }
 
-.container:hover input ~ .checkmark {
+.container:hover input[type=radio] ~ .checkmark {
   background-color: #646F58;
 }
 
