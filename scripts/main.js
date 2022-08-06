@@ -24,6 +24,7 @@ function starter(){
         console.log(Object.keys(newSection).length)
         newSection[Object.keys(newSection).length || 0] = section;
         localStorage.setItem("sections", JSON.stringify(newSection))
+        section.i = section.i + 1;
 
         resetSection();
     })
@@ -114,7 +115,7 @@ function resetSection() {
 function createHTML(){
     let html ="";
     array = section.subsections;
-    array.forEach((coso,index) => {html = html+(`<label for='cbox${coso.number}' class='container'>${coso.value}<input type='${section.type}' id='cbox${coso.number}' value='${coso.value}'><span class='checkmark'></span></label><br>`)});
+    array.forEach((coso,index) => {html = html+(`<label for='cbox${coso.number}' class='container'>${coso.value}<input type='${section.type}' id='cbox${coso.number}' value='${coso.value}'><span class='checkmark ${section.type}'></span></label><br>`)});
     console.log(html)
     return html;
 }

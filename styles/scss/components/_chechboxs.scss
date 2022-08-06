@@ -1,17 +1,6 @@
 @use "../utilities/variables" as *;
 
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
+
 input[type=checkbox]{
 
     &~.checkmark {
@@ -47,17 +36,12 @@ input[type=checkbox]{
     box-shadow: 0px 3px 2px 3px  map-get($dark-theme, "darkgreen");
 }
 
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
 
 .container input[type=checkbox]:checked~.checkmark:after {
     display: block;
 }
 
-.container .checkmark:after {
+.container .checkmark.checkbox:after {
     left: 8px;
     top: 4px;
     width: 5px;
