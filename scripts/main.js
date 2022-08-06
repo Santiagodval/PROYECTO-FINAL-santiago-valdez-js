@@ -18,10 +18,8 @@ function starter(){
    localStorage.setItem("sections",JSON.stringify({}));
     fetch("./instrucciones.json").then(respuesta => respuesta.json()).then(data => {
         section = data[0];
-        console.log(section);
         addHTML();
         let newSection = JSON.parse(localStorage.getItem("sections"));
-        console.log(Object.keys(newSection).length)
         newSection[Object.keys(newSection).length || 0] = section;
         localStorage.setItem("sections", JSON.stringify(newSection))
         section.i = section.i + 1;
@@ -34,12 +32,10 @@ function starter(){
 //--------------
 
 function addCheckBox() {
-    console.log("addCheckBox");
     section.type = "checkbox";
     section.title = document.getElementById("title").value;
     addHTML();
     let newSection = JSON.parse(localStorage.getItem("sections"));
-    console.log(Object.keys(newSection).length)
     newSection[Object.keys(newSection).length || 0] = section;
     localStorage.setItem("sections", JSON.stringify(newSection))
 
@@ -47,12 +43,10 @@ function addCheckBox() {
 }
 
 function addRadioButton() {
-    console.log("addRadioButton");
     section.type = "radio";
     section.title = document.getElementById("title").value;
     addHTML();
     let newSection = JSON.parse(localStorage.getItem("sections"));
-    console.log(Object.keys(newSection).length)
     newSection[Object.keys(newSection).length || 0] = section;
     localStorage.setItem("sections", JSON.stringify(newSection))
 
@@ -60,12 +54,10 @@ function addRadioButton() {
 }
 
 function addTextfield() {
-    console.log("addTextfield");
     section.type = "textfield";
     section.title = document.getElementById("title").value;
     addHTML();
     let newSection = JSON.parse(localStorage.getItem("sections"));
-    console.log(Object.keys(newSection).length)
     newSection[Object.keys(newSection).length || 0] = section;
     localStorage.setItem("sections", JSON.stringify(newSection))
 
@@ -75,18 +67,15 @@ function addTextfield() {
 //---------------
 
 function addSubsectionToElement() {
-    console.log(document.getElementById("subsectionText").value);
     section.subsections.push({value:document.getElementById("subsectionText").value, number:section.i});
     section.i = section.i + 1;
     section.subsections[0].i;
-    console.log(section.i);
 }
 
 //-------------
 
 function addHTML() {
     if (section.type != "" && section.title != "" && section.subsections != []) {
-        console.log(section)
 
         let container = document.createElement("fieldset");
 
@@ -116,7 +105,6 @@ function createHTML(){
     let html ="";
     array = section.subsections;
     array.forEach((coso,index) => {html = html+(`<label for='cbox${coso.number}' class='container'>${coso.value}<input type='${section.type}' id='cbox${coso.number}' value='${coso.value}'><span class='checkmark ${section.type}'></span></label><br>`)});
-    console.log(html)
     return html;
 }
 
