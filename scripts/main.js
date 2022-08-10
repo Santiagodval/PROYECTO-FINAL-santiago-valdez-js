@@ -104,7 +104,7 @@ function resetSection() {
 function createHTML(){
     let html ="";
     array = section.subsections;
-    array.forEach((coso,index) => {html = html+(`<label for='cbox${coso.number}' class='container'>${coso.value}<input type='${section.type}' id='cbox${coso.number}' value='${coso.value}'><span class='checkmark ${section.type}'></span></label><br>`)});
+    array.forEach((coso,index) => {html = html+(`<label class='container'><span class='label'>${coso.value}</span><input type='${section.type}' id='cbox${coso.number}' name='${section.type}${section.i}' value='${coso.value}'><span class='checkmark ${section.type}'></span></label><br>`)});
     return html;
 }
 

@@ -151,6 +151,14 @@ button#dark-mode {
   color: black;
 }
 
+input[type=textfield] {
+  display: block;
+  opacity: 1;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+}
+
 .main-fieldset {
   display: block;
 }
