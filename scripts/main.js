@@ -9,7 +9,7 @@ localStorage.getItem("sections") === null ? starter() : generateHTML();
 
 document.getElementById("addCheckBox").addEventListener("click", addCheckBox);
 document.getElementById("addRadioButton").addEventListener("click", addRadioButton);
-document.getElementById("addTextfield").addEventListener("click", addTextfield);
+document.getElementById("addTextarea").addEventListener("click", addTextarea);
 document.getElementById("addSubsection").addEventListener("click", addSubsectionToElement);
 document.getElementById("deleteAllSections").addEventListener("click", deleteAllSections);
 document.getElementById("dark-mode").addEventListener("click", darkMode);
@@ -53,8 +53,8 @@ function addRadioButton() {
     resetSection();
 }
 
-function addTextfield() {
-    section.type = "textfield";
+function addTextarea() {
+    section.type = "textarea";
     section.title = document.getElementById("title").value;
     addHTML();
     let newSection = JSON.parse(localStorage.getItem("sections"));
@@ -75,7 +75,7 @@ function addSubsectionToElement() {
 //-------------
 
 function addHTML() {
-    if (section.type != "" && section.title != "" && section.subsections != []) {
+    if (section.type != "" && section.title != "" && section.subsections != [] && section.type!="textarea") {
 
         let container = document.createElement("fieldset");
 
@@ -85,9 +85,23 @@ function addHTML() {
         document.body.append(container);
 
 
-    } else {
+    } else if(section.type === "textarea"){
+        let container = document.createElement("fieldset");
+
+        container.className = "fieldset";
+        container.innerHTML = `<legend>${section.title}</legend> ${createHTMLtextarea()}`;
+        
+        document.body.append(container);
+    }else{
         swal("Complete the inputs!");
     }
+}
+
+function createHTMLtextarea(){
+    let html ="";
+    array = section.subsections;
+    array.forEach((coso,index) => {html = html+(`<br><label class='container'><span class='label'>${coso.value}</span><textarea type='${section.type}' id='cbox${coso.number}' name='${section.type}${section.i}' value='${coso.value}'></textarea></label><br>`)});
+    return html;
 }
 
 function resetSection() {
@@ -143,7 +157,7 @@ function deleteAllSections(){
 
     <button id="addCheckBox">Add checkbox</button>
     <button id="addRadioButton">Add radiobutton</button>
-    <button id="addTextfield">Add textfield</button>
+    <button id="addTextarea">Add textarea</button>
     <button id="deleteAllSections">Delete all sections</button>
 
     </fieldset>
@@ -156,7 +170,7 @@ function deleteAllSections(){
 
 document.getElementById("addCheckBox").addEventListener("click", addCheckBox);
 document.getElementById("addRadioButton").addEventListener("click", addRadioButton);
-document.getElementById("addTextfield").addEventListener("click", addTextfield);
+document.getElementById("addTextarea").addEventListener("click", addTextarea);
 document.getElementById("addSubsection").addEventListener("click", addSubsectionToElement);
 document.getElementById("deleteAllSections").addEventListener("click", deleteAllSections);
 document.getElementById("dark-mode").addEventListener("click", darkMode);
